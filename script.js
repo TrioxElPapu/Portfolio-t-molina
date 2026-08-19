@@ -1,6 +1,6 @@
-// ============================
+// ============================"
 // SMOOTH SCROLL NAVIGATION
-// ============================
+// ============================"
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -15,9 +15,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ============================
+// ============================"
 // NAVBAR ACTIVE LINK HIGHLIGHT
-// ============================
+// ============================"
 
 const updateActiveLink = () => {
     const sections = document.querySelectorAll('section');
@@ -45,17 +45,17 @@ const updateActiveLink = () => {
 
 updateActiveLink();
 
-// ============================
+// ============================"
 // ANIMACIÓN DE CARGA
-// ============================
+// ============================"
 
 window.addEventListener('load', () => {
     document.body.style.opacity = '1';
 });
 
-// ============================
-// FUNCIONES PARA ACTUALIZAR PROYECTOS (future use)
-// ============================
+// ============================"
+// FUNCIONES PARA ACTUALIZAR CONTENIDO (future use)
+// ============================"
 
 /**
  * Función para agregar un nuevo proyecto a la página
@@ -137,10 +137,29 @@ function addSkill(skillName, category) {
     skillsContainer.appendChild(skillElement);
 }
 
-// ============================
+/**
+ * Función para agregar un nuevo curso a la sección de educación
+ * @param {string} courseName - Nombre del curso
+ * @param {string} courseCategory - Categoría del curso
+ */
+function addEducationCourse(courseName, courseCategory) {
+    const educationContainer = document.querySelector('.education-container');
+    
+    const educationElement = document.createElement('div');
+    educationElement.className = 'education-item';
+    educationElement.innerHTML = `
+        <h3>${courseName}</h3>
+        <p class="education-category">${courseCategory}</p>
+    `;
+
+    educationContainer.appendChild(educationElement);
+}
+
+// ============================"
 // EJEMPLO DE USO (comentado para usar después)
-// ============================
+// ============================"
 
 // addProject('Mi Primer Proyecto', 'JavaScript', 'https://github.com/TrioxElPapu/proyecto');
 // addSkill('JavaScript', 'Lenguaje de Programación');
+// addEducationCourse('Nombre del Curso', 'Categoría');
 // updateContactInfo('nuevo@email.com', 'https://linkedin.com/...', 'https://github.com/...');

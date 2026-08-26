@@ -184,6 +184,7 @@ body::before {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
+    text-align: center;
 }
 
 /* ============================"
@@ -231,7 +232,7 @@ body::before {
 .description {
     font-size: var(--font-size-large);
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     line-height: 1.8;
 }
@@ -242,7 +243,7 @@ body::before {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
 }
 
@@ -543,7 +544,10 @@ body::before {
         padding: var(--spacing-md);
     }
 
-    .skills-container,
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .education-container,
     .projects-container,
     .contact-container {
@@ -597,7 +601,10 @@ body::before {
         padding: var(--spacing-lg) var(--spacing-md);
     }
 
-    .skills-container,
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
     .education-container,
     .projects-container,
     .contact-container {

@@ -11,6 +11,8 @@
     --accent: #58a6ff;
     --accent-hover: #79c0ff;
     --border-color: #30363d;
+    --success: #3fb950;
+    --success-hover: #56d364;
     
     /* Tipografía */
     --font-family: 'Montserrat', sans-serif;
@@ -281,23 +283,83 @@ body {
     justify-content: center;
 }
 
+.project-link-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .project-item {
     background-color: var(--bg-secondary);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
 }
 
-.project-item:hover {
+.project-link-card:hover .project-item {
     border-color: var(--accent);
     box-shadow: 0 0 20px rgba(88, 166, 255, 0.1);
+    transform: translateY(-5px);
+    background-color: rgba(88, 166, 255, 0.05);
+}
+
+.project-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
 }
 
 .project-item h3 {
     color: var(--accent);
     margin-bottom: var(--spacing-xs);
     font-size: var(--font-size-large);
+}
+
+.project-description {
+    color: var(--text-secondary);
+    font-size: var(--font-size-small);
+    margin-bottom: var(--spacing-md);
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+.project-status {
+    margin-bottom: var(--spacing-md);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 20px;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    border: 1px solid;
+    background-color: rgba(63, 185, 80, 0.1);
+    color: var(--success);
+    border-color: var(--success);
+}
+
+.status-badge.completed {
+    background-color: rgba(63, 185, 80, 0.15);
+}
+
+.project-link-text {
+    color: var(--accent);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-link-card:hover .project-link-text {
+    opacity: 1;
 }
 
 .project-language {
@@ -321,6 +383,21 @@ body {
 
 .project-link:hover {
     color: var(--accent-hover);
+}
+
+.cinema-project {
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* ============================"
@@ -466,5 +543,13 @@ body {
     .project-item,
     .contact-item {
         padding: var(--spacing-md);
+    }
+
+    .project-icon {
+        font-size: 2.5rem;
+    }
+
+    .project-link-text {
+        opacity: 1;
     }
 }
